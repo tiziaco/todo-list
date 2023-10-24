@@ -1,10 +1,12 @@
 body {
+	display: block;
 	background: #222;
 	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
 	  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
 
 header {
+	display: block;
 	color: hotpink;
 	font-size: 2rem;
 }
@@ -20,6 +22,12 @@ h2 {
 
 footer {
 	color: white;
-	position: absolute;
+	display: block;
 	bottom: 0;
-  }
+}
+
+.active {
+	background-color: #007bff; /* Change background color for active item */
+	color: #fff; /* Change text color for active item */
+	/* Add more styles as needed */
+}
