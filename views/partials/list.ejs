@@ -7,7 +7,7 @@
 <div class="list-group">
 	<% list.getItems().forEach(item => { %>
 		<label class="list-group-item d-flex gap-3">
-			<input class="form-check-input flex-shrink-0" type="checkbox" value="" checked="" style="font-size: 1.375em;">
+			<input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;"> <!-- checked="" -->
 			<span class="pt-1 form-checked-content">
 				<strong><%= item.toDo %></strong>
 				<small class="d-block text-body-secondary">
@@ -22,7 +22,7 @@
 		<input class="form-check-input form-check-input-placeholder bg-body-tertiary flex-shrink-0 pe-none" disabled="" type="checkbox" value="" style="font-size: 1.375em;">
 		<span class="pt-1 form-checked-content">
 			<form class="item" action="/additem" method="post">
-				<input type="hidden" name="listId" value="<%= list %>">
+				<input type="hidden" name="listId" value="<%= list.getName() %>">
 				<input type="text" name="newItem" placeholder="New Item" autocomplete="off">
 				<button type="submit" name="list" value="Work" list="">
 					<img src="./img/plus-circle.svg" alt="calendar" height="25">

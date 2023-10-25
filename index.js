@@ -20,7 +20,7 @@ app.set('view engine', 'ejs');
 // Define routes
 app.get("/", (req, res) => {
 	res.render("today.ejs", {
-		activeItem: 'today',
+		activeItem: 'today', // For the sidebar buttons
 		listNames: Object.keys(lists)
 	});
 });
@@ -41,13 +41,15 @@ app.get("/showlist", (req, res) => {
 });
 
 app.post("/additem", (req, res) => {
-	// Create an object which contains the objects inside the form
-	var key = Object.keys(req.body);
-	var list = req.body["listId"]
+	var listId = req.body["listId"]
   	var item = req.body["newItem"];
-	console.log(key)
+	lists[listId].addItem({
+		start: '',
+		end: '',
+		toDo: item});
+	// console.log(listId, item)
 	var date = new Date();
-	res.redirect("/showlist");
+	res.redirect(`/showlist?listId=${listId}`);
 });
 
 // Run app

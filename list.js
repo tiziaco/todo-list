@@ -1,4 +1,22 @@
 
+export class Item {
+
+	constructor(toDo, start, end) {
+		this.toDo = toDo;
+		this.start = start;
+		this.end = end;
+		this.completed = false;
+		this.deleted = false;
+	}
+	isCompleted() {
+		return this.completed;
+	}
+	setCompleted() {
+		this.completed = true;
+	}
+}
+
+
 export class List {
 
 	constructor(name) {
@@ -16,7 +34,7 @@ export class List {
 	}
 	_setName(name) {
 		return name[0].toUpperCase() + name.slice(1);
-		}
+	}
 }
 
 
