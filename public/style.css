@@ -1,6 +1,6 @@
 body {
 	display: block;
-	background: #222;
+	background: #040035;
 	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
 	  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
@@ -9,6 +9,12 @@ header {
 	display: block;
 	color: hotpink;
 	font-size: 2rem;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.card {
+	background-color: darkorange;
 }
 
 h1 {

@@ -1,19 +1,18 @@
 <%- include('partials/header.ejs') %>
 
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<%- include('partials/sidebar.ejs', {
+				listNames: listNames
+				}) %>
+		</div>
 
-<div class="container-fluid">
-	<div class="row">
-		<%- include('partials/sidebar.ejs', {
-			listNames: listNames
-			}) %>
+		<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+			<%- include('partials/list.ejs', {
+				list: list
+				}) %>
+		</main>
 	</div>
-
-	<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-		<%- include('partials/list.ejs', {
-			list: list
-			}) %>
-
-	</main>
-</div>
 
 <%- include('partials/footer.ejs') %>

@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 // Define routes
 app.get("/", (req, res) => {
-	res.render("today.ejs", {
+	res.render("main.ejs", {
 		activeItem: 'today', // For the sidebar buttons
 		listNames: Object.keys(lists)
 	});
