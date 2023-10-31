@@ -2,7 +2,7 @@ import express from "express";
 import bodyParser from "body-parser";
 import morgan from "morgan";
 
-import {List} from "./list.js";
+import {List, Item} from "./list.js";
 
 // Initialize app
 const app = express();
@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 
 // Define routes
 app.get("/", (req, res) => {
-	res.render("main.ejs", {
+	res.render("today.ejs", {
 		activeItem: 'today', // For the sidebar buttons
 		listNames: Object.keys(lists)
 	});
@@ -33,7 +33,7 @@ app.get("/upcoming", (req, res) => {
 });
 
 app.get("/showlist", (req, res) => {
-	res.render("showlist.ejs", {
+	res.render("main.ejs", {
 		activeItem: req.query.listId,
 		listNames: Object.keys(lists),
 		list: lists[req.query.listId]

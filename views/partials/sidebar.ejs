@@ -1,15 +1,16 @@
-<div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
+<!-- <div class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary"> -->
 
-	<div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+<div class="offcanvas-md offcanvas-end bg-body-tertiary" tabindex="-1" id="sidebarMenu" 
+	aria-labelledby="sidebarMenuLabel" style="height: 100%;">
 	<div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
 		<ul class="nav flex-column">
-			<li class="nav-item <%= activeItem === 'today' ? 'active' : '' %>">
+			<li class="nav-item ps-2 <%= activeItem === 'today' ? 'active' : '' %>">
 				<form action="/" method="GET">
 					<img src="./img/calendar.svg" alt="today" height="20">
 					<button type="submit" class="btn">Today</button>
 				</form>
 			</li>
-			<li class="nav-item <%= activeItem === 'upcoming' ? 'active' : '' %>">
+			<li class="nav-item ps-2 <%= activeItem === 'upcoming' ? 'active' : '' %>">
 				<form action="/upcoming" method="GET">
 					<img src="./img/calendar-upcoming.svg" alt="upcoming" height="20">
 					<button type="submit" class="btn">Upcoming</button>
@@ -23,7 +24,7 @@
 
 		<ul class="nav flex-column mb-auto">
 			<% listNames.forEach(list => { %>
-				<li class="nav-item <%= activeItem === list ? 'active' : '' %>">
+				<li class="nav-item ps-2 <%= activeItem === list ? 'active' : '' %>">
 					<form action="/showlist" method="GET">
 						<input type="hidden" name="listId" value="<%= list %>">
 						<img src="./img/personal.svg" alt="personal list" height="20">

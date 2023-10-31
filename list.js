@@ -1,10 +1,10 @@
 
 export class Item {
 
-	constructor(toDo, start, end) {
-		this.toDo = toDo;
+	constructor(start, end, toDo) {
 		this.start = start;
 		this.end = end;
+		this.toDo = toDo;
 		this.completed = false;
 		this.deleted = false;
 	}
