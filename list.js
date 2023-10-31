@@ -1,12 +1,12 @@
 
 export class Item {
 
-	constructor(start, end, toDo) {
+	constructor(id, start, end, toDo) {
+		this.id = id
 		this.start = start;
 		this.end = end;
 		this.toDo = toDo;
 		this.completed = false;
-		this.deleted = false;
 	}
 	isCompleted() {
 		return this.completed;
@@ -14,17 +14,26 @@ export class Item {
 	setCompleted() {
 		this.completed = true;
 	}
+	getId() {
+		return this.id;
+	}
 }
 
 
 export class List {
 
 	constructor(name) {
-		this.name = this._setName(name);
-		this.items = [];
+		this.name = List.setName(name);
+		this.items = {};
+		this.nextId = 0;
 	}
 	addItem(toDo) {
-		this.items.push(toDo);
+		var id = this.getNextId();
+		var newItem = new Item(id, toDo.start, toDo.end, toDo.toDo);
+		this.items[newItem.getId()] = newItem;
+	}
+	deleteItem(id) {
+		delete this.items[id];
 	}
 	getItems() {
 		return this.items;
@@ -32,14 +41,17 @@ export class List {
 	getName() {
 		return this.name;
 	}
-	_setName(name) {
+	static setName(name) {
 		return name[0].toUpperCase() + name.slice(1);
 	}
+	getNextId() {
+		return this.nextId++;
+	  }
 }
 
 
 // TEST object
-
+/* 
 // Initialize default lists: Personal and Work
 const personal = new List("personal");
 const work = new List("work")
@@ -47,9 +59,10 @@ const lists = {"personal" : personal, "work": work}
 
 // Populate lists: TEST ONLY
 personal.addItem({
-	start: '23-12-2023',
-	end: '',
-	toDo: "Grocery shopping"});
+	start : '23-12-2023',
+	end : '',
+	toDo: "Grocery shopping"
+});
 personal.addItem({
 	start: '22-12-2023',
 	end: '',
@@ -61,5 +74,24 @@ work.addItem({
 work.addItem({
 	start: '24-12-2023',
 	end: '29-12-2023',
-	toDo: "Christmas vacation"});
-console.log(Object.keys(lists));
+	toDo: "Christmas vacation"}); */
+// console.log(Object.keys(lists));
+// console.log(lists["personal"]);
+
+// Test Delete item OK
+/* lists.personal.deleteItem(1);
+personal.addItem({
+	start : '23-12-2023',
+	end : '',
+	toDo: "Grocery shopping"
+});
+console.log(lists["personal"]); */
+/* var items = lists["personal"].getItems()
+for (let itemId in items) {
+	var item = items[itemId]
+	console.log(item.toDo)
+	//console.log(item.toDo);
+	console.log(" ---- ")
+}
+console.log(lists["personal"].getItems())
+console.log(lists["personal"]) */
