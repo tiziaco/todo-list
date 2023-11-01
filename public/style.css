@@ -3,7 +3,6 @@ body {
 	font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
 	  helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
 }
-
 header {
 	display: block;
 	position: sticky;
@@ -12,6 +11,22 @@ header {
 	font-size: 2rem;
 	padding-top: 20px;
 	padding-bottom: 20px;
+}
+h1 {
+	margin: 10px;
+}
+h2 {
+	color: #000000;
+	font-size: 1.5rem;
+}
+footer {
+	color: #000000;
+	display: block;
+	bottom: 0;
+}
+button {
+	background-color: transparent;
+	border: none;
 }
 
 .card {
@@ -22,40 +37,33 @@ header {
 	height: 100vh;
 }
 
-h1 {
-	margin: 10px;
+.custom-pudding {
+	padding-left: 10%;
+	padding-right: 10%;
 }
-
-h2 {
-	color: #000000;
-	font-size: 1rem;
-}
-
-footer {
-	color: #000000;
-	display: block;
-	bottom: 0;
-}
-button {
-	background-color: transparent;
-	border: none;
-  }
 
 .active {
-	background-color: #007bff; /* Change background color for active item */
+	background-color: aquamarine; /* Change background color for active item */
 	color: #fff;
 	border-radius: 5px;
-	/* Add more styles as needed */
 }
-
-.delete-btn {
-	display: inline-block;
+.nav-item:hover {
+	background-color: aquamarine;
+	border-radius: 5px;
 }
 
 .delete-btn {
 	display: none;
-  }
+	color: aqua;
+}
 
-  .list-group-item:hover .delete-btn {
+.list-group-item:hover .delete-btn {
 	display: inline-block;
-  }
+}
+.nav-item:hover .delete-btn {
+	display: inline-block;
+}
+.list-group-item:hover .delete-btn img {
+	color: aqua !important;
+	fill: aqua !important;
+}

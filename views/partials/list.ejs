@@ -9,16 +9,18 @@
 		for (let itemId in items) { 
 			var item = items[itemId];
 	%>
-		<label class="list-group-item d-flex gap-3">
-			<input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;"> <!-- checked="" -->
-			<span class="pt-1 form-checked-content">
-				<strong><%= item.toDo %></strong>
-				<small class="d-block text-body-secondary">
-					<img src="./img/calendar-event.svg" alt="calendar" height="10">
-					1:00–2:00pm
-				</small>
-			</span>
-			<form class="item" action="/deleteitem" method="delete">
+		<label class="list-group-item d-flex gap-3 justify-content-between align-items-center">
+			<div class="d-flex gap-3">
+				<input class="form-check-input flex-shrink-0" type="checkbox" value="" style="font-size: 1.375em;">
+				<span class="pt-1 form-checked-content text-start">
+					<strong><%= item.toDo %></strong>
+					<small class="d-block text-body-secondary">
+						<img src="./img/calendar-event.svg" alt="calendar" height="10">
+						1:00–2:00pm
+					</small>
+				</span>
+			</div>
+			<form class="item" action="/deleteitem" method="post">
 				<input type="hidden" name="listId" value="<%= list.getName() %>">
 				<input type="hidden" name="itemId" value="<%= item.getId() %>">
 				<button class="delete-btn" list="">

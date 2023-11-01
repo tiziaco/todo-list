@@ -47,20 +47,25 @@ app.post("/additem", (req, res) => {
 		start: '',
 		end: '',
 		toDo: item});
-	console.log(listId, item)
 	var date = new Date();
 	res.redirect(`/showlist?listId=${listId}`);
 });
 
-app.get("/deleteitem", (req, res) => {
+app.post("/deleteitem", (req, res) => {
 	var listId = req.body["listId"];
 	var itemId = req.body["itemId"];
-	// PROBLEMA: non mi legge i parametri
-	console.log(listId, itemId);
 
 	lists[listId].deleteItem(itemId);
 	
 	res.redirect(`/showlist?listId=${listId}`);
+});
+
+app.post("/deletelist", (req, res) => {
+	var listId = req.body["listId"];
+
+	delete lists[listId];
+	
+	res.redirect(`/`);
 });
 
 // Run app
