@@ -36,12 +36,12 @@
 						<img src="./img/circle-fill.svg" alt="personal list" height="20">
 						<button type="submit" class="btn"><%= list %></button>
 					</form>
-					<form action="/deletelist" method="post">
-						<input type="hidden" name="listId" value="<%= list %>">
-						<button class="delete-btn">
+					<!-- <form action="/deletelist" method="post">
+						<input type="hidden" name="listId" value="<%= list %>"> -->
+						<button class="delete-list" id="<%= list %>">
 							<img src="./img/trash.svg" alt="delete" height="15">
 						</button>
-					</form>
+					<!-- </form> -->
 				</li>
 			<%}) %>
 		</ul>

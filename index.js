@@ -60,13 +60,13 @@ app.post("/deleteitem", (req, res) => {
 	res.redirect(`/showlist?listId=${listId}`);
 });
 
-app.post("/deletelist", (req, res) => {
+/* app.post("/deletelist", (req, res) => {
 	var listId = req.body["listId"];
 
 	delete lists[listId];
 	
 	res.redirect(`/`);
-});
+}); */
 
 // Run app
 app.listen(port, () => {
@@ -96,3 +96,4 @@ work.addItem({
 	end: '29-12-2023',
 	toDo: "Christmas vacation"});
 // console.log(lists);
+export default lists;
