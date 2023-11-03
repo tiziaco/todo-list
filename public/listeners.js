@@ -1,10 +1,9 @@
 console.log("  OK  ")
-import { lists } from './index.js';
+import {lists} from "./models/list.js"
 
 $( ".delete-list" ).on( "click", function() {
-	var listId = $(this).attr('listId');
-	alert(`Delete button clicked: ${listId}`);
+	var listId = $(this).attr('id');
 	delete lists[listId];
-	console.log("-- List removed --")
+	console.log(lists);
 	$(`#${listId}`).remove();
 });

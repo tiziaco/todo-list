@@ -1,5 +1,4 @@
-
-export class Item {
+class Item {
 
 	constructor(id, start, end, toDo) {
 		this.id = id
@@ -19,7 +18,7 @@ export class Item {
 	}
 }
 
-export class List {
+class List {
 
 	constructor(name) {
 		this.name = List.setName(name);
@@ -48,15 +47,12 @@ export class List {
 	  }
 }
 
-
-// TEST object
-/* 
 // Initialize default lists: Personal and Work
 const personal = new List("personal");
 const work = new List("work")
-const lists = {"personal" : personal, "work": work}
+export const lists = {"Personal" : personal, "Work": work}
 
-// Populate lists: TEST ONLY
+// Populate lists
 personal.addItem({
 	start : '23-12-2023',
 	end : '',
@@ -73,7 +69,7 @@ work.addItem({
 work.addItem({
 	start: '24-12-2023',
 	end: '29-12-2023',
-	toDo: "Christmas vacation"}); */
+	toDo: "Christmas vacation"});
 // console.log(Object.keys(lists));
 // console.log(lists["personal"]);
 
